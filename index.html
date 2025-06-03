@@ -1,0 +1,43 @@
+<html>
+
+	<head>
+		<title>Temparature Converter By Prathamesh</title>
+		<style>	
+		*{font-size:40px; font-familly:Cambria; margin:auto; text-align:center;}
+		h1{text-align:center; margin-top:20px; background-color:black; color:white;}
+		body{background-color:lightpink;}
+		</style>
+		
+	
+	</head>
+	<body>
+		<h1>Temparature Converter App</h1>
+		<br></br>
+		<form>
+			<label>Temprature in Celcius<label/>
+			<input type= "number" step="0.01" id="cel"/>
+			<br/><br/>
+			<label>Temprature in Fehranthite<label/>
+			<input type= "number" step="0.01" id="feh"/>
+			<br/><br/>
+		</form>
+				<script>
+					let cel= document.getElementById("cel");
+					let feh= document.getElementById("feh");
+				
+					cel.addEventListener("input", function(){
+					let c = parseFloat(cel.value);
+					let f = (c * (9/5))+32;
+					feh.value=f.toFixed(2);
+					});
+					
+					feh.addEventListener("input", function(){
+					let f = parseFloat(feh.value);
+					let c = (f - 32)* 5/9;
+					cel.value=c.toFixed(2);
+					});
+					
+				</script>
+
+	</body>
+</html>
